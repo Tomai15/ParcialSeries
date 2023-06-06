@@ -68,3 +68,31 @@ cambiarActores unaSerie actoresAponer = unaSerie {actores = actoresAponer ++ dro
 -----------
 --Punto 3--
 -----------
+{-
+bienestarSerie :: Serie -> Int
+bienestarSerie unaSerie
+    | cancelada unaSerie = 0
+    | otherwise = bienestarReparto unaSerie + bienestarLongitud unaSerie
+
+bienestarLongitud :: Serie -> Int
+bienestarLongitud unaSerie
+    | temporadasEstimadas unaSerie > 4 = 5
+    | otherwise = 10-(temporadasEstimadas unaSerie)*2
+
+bienestarReparto :: Serie -> Int
+bienestarReparto unaSerie
+    | length (actores unaSerie) < 10 = 3
+    | otherwise = (10-length (filter (length.restricciones.actores) unaSerie))
+-}
+-----------
+--Punto 4--
+-----------
+
+--masBienestar :: [Productor] -> [Serie] -> [Serie]
+--masBienestar productores series = map (mejorProductorParaSerie) series
+
+mejorProductorParaSerie :: [Productor] -> Serie -> Serie
+mejorProductorParaSerie productores unaSerie = serieConMejorBienestar (map ($unaSerie) productores)
+
+serieConMejorBienestar :: [Serie] -> Serie
+serieConMejorBienestar unasSeries = 
