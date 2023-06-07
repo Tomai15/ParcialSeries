@@ -96,3 +96,6 @@ mejorProductorParaSerie productores unaSerie = serieConMejorBienestar (map ($una
 
 serieConMejorBienestar :: [Serie] -> Serie
 serieConMejorBienestar unasSeries = 
+
+
+dfdsfdsfdsfsd
