@@ -1,7 +1,7 @@
 -----------
 --Punto 1--
 -----------
-
+dfdsfdsfd
 data Serie = Serie{
     nombre :: String,
     actores :: [Actor],
